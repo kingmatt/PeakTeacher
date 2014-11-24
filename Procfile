@@ -1,1 +1,1 @@
-web: rails server Puma -e production -p $PORT
+web: rails server -e production -p $PORT
