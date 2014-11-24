@@ -12,6 +12,18 @@ class AppsController < ApplicationController
       format.xml { render xml: @apps, layout: false}
     end
   end
+  
+  # GET /available-apps
+  # Returns all the available apps, as either JSON or XML 
+  # depending on the request extension
+  def available
+    @apps = App.where(available: true)
+
+    respond_to do |format|
+      format.json { render json: @apps, layout: false}
+      format.xml {render xml: @apps, layout: false}
+    end
+  end
 
   # GET /apps/1
   # GET /apps/1.json

@@ -8,6 +8,8 @@ PeakTeacher::Application.routes.draw do
   root 'apps#index'
 
   get '/' => 'apps#index'
+  
+  get '/available-apps' => 'apps@available'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
